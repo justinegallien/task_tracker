@@ -6,7 +6,7 @@ import {
   deleteTask,
   postTask,
   putTask,
-} from "../controller/taskController.js";
+} from "../controllers/taskController.js";
 
 task.get("/task/", getTask);
 task.post("/task/", postTask);

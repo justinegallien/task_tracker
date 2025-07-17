@@ -5,7 +5,7 @@ import {
   postEmployee,
   deleteEmployee,
   putEmployee,
-} from "../controller/employeeController.js";
+} from "../controllers/employeeController.js";
 
 employee.get("/employee/", getEmployee);
 employee.post("/employee/", postEmployee);
