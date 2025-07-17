@@ -1,8 +1,8 @@
 import express from "express";
 const app = express();
 const port = 3000;
-import { employee } from "./task_tracker/routes/employeeRoute.js";
-import { task } from "./task_tracker/routes/taskRoute.js";
+import { employee } from "./routes/employeeRoute.js";
+import { task } from "./routes/taskRoute.js";
 
 app.use(express.json());
 
