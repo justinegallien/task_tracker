@@ -6,7 +6,7 @@ export const getTask = async (req, res) => {
                         b.name as employee_name, 
                         a.description,
                         a.status
-                from task_tracker.task a 
+                from task_tracker.tasks a 
                 inner join task_tracker.employee b on a.employee_id = b.employee_id`;
   const result = await pool.query(sql);
   return res.json(result.rows);
