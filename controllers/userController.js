@@ -41,5 +41,5 @@ export const auth = async (req, res) => {
 
 // 200 = succes!
 // 300 = validation has failed
-// 400 = forbiden
+// 400 = forbidden
 // 500 = the operation is wrong
