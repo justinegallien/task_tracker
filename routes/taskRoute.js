@@ -1,5 +1,5 @@
 import express from "express";
-import { validateToken } from "../middleware/authValidation.js";
+import { validateToken } from "../middleware/authMiddleware.js";
 export const task = express.Router();
 
 import {
