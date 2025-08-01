@@ -12,6 +12,22 @@ export const getTask = async (req, res) => {
   return res.json(result.rows);
 };
 
+export const getTaskPerUser = async (req, res) => {
+  const { employee_id } = req.params;
+
+  const sql = `select a.task_id, 
+                        a.employee_id, 
+                        b.name as employee_name, 
+                        a.description,
+                         a.status
+                from task_tracker.tasks a 
+                inner join task_tracker.employee b on a.employee_id = b.employee_id
+                where a.employee_id = $1`;
+  const result = await pool.query(sql, [employee_id]);
+
+  return res.json(result.rows);
+};
+
 export const postTask = async (req, res) => {
   const sql = `insert into task_tracker.tasks (description, status, employee_id) values ($1, $2, $3)`;
   const body = req.body;

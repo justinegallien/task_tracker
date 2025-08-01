@@ -6,6 +6,18 @@ export const getEmployee = async (req, res) => {
   return res.json(result.rows);
 };
 
+export const getEmployeeId = async (req, res) => {
+  const { employee_id } = req.params;
+
+  const sql = `select employee_id, 
+                        name, 
+                        department,
+                        role 
+                from task_tracker.employee where employee_id = $1`;
+  const result = await pool.query(sql, [employee_id]);
+  return res.json(result.rows);
+};
+
 export const postEmployee = async (req, res) => {
   const sql = `insert into task_tracker.employee (name, department, role) values ($1, $2, $3)`;
   const body = req.body;
